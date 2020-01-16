@@ -1,0 +1,80 @@
+.browser{
+    background-color:rgb(224, 224, 223);
+    
+        .navtext{
+            color: white;
+            font-family: sans-serif;
+            line-height: 50px;
+        
+        }
+    .head{
+        .heading{
+    // display: inline-block;
+    float: left;
+    color: rgb(82, 167, 201);
+        }
+        .addBtn{
+            background-color: rgb(73, 94, 108);
+            border: none;
+    border-radius: 15px;
+    float: right;
+    margin: auto;
+    color: white;
+
+
+        }
+    .buttonLine{
+        background-color:rgb(189, 189, 189);
+        height: 1.3px;
+        margin-top: 3rem;
+    }
+    
+}
+.in{
+    display: inline-block;
+    padding-left: 19px;
+    width: 45%;
+}
+    .mainContent{
+overflow-y: scroll;
+overflow-x: hidden;
+height: auto;
+max-height: 200px;
+padding-right: 1.5rem;
+    .content{
+        cursor: pointer;
+        width: 100%;
+        padding-left: 2rem;
+        color:#39414a;
+        background-color: #b2dbf5;
+        display: inline-block;
+        padding-right: 8rem;
+        margin: 10px 14px 0px 14px;
+        
+    .recordtxt{
+     display: inline-block;
+     margin:0.5rem;
+    }
+}
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(189, 189, 189);; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 6px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; }

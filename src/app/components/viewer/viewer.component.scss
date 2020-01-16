@@ -1,0 +1,82 @@
+.viewer{
+    background-color:rgb(224, 224, 223); 
+        .navtext{
+            color: white;
+            font-family: sans-serif;
+            line-height: 50px;
+        }
+    .addRecord{
+        padding-left: 3rem;
+        .headRecd{
+            color: lightskyblue;
+            margin: 1rem 0rem 1rem 0rem;
+            }
+        
+        .recdlabel{
+            display:flex;
+
+        }
+        .ContentMain{
+            display: inline-block;
+            .form-group{
+
+            
+            .area{
+                position: relative;
+                .interaldiv{
+                    position: absolute;
+                    top: 22%;
+                    left: 20%;
+                   
+                    width: auto;
+                    // max-width: 27px;
+                    border: 1px dashed darkmagenta;
+                    height: auto;
+                    .mybtn{
+                        background: transparent;
+                        border: none;
+                        color: #777d82;
+                        font-size: 25px;
+                        width: -webkit-fill-available;
+                    }
+                    .mysmall{
+                        font-size: 9px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        }
+
+    }
+    .tAudio{
+        border: 1px dashed;
+        width: fit-content;
+        padding-right: 1rem;
+        .tdiv{
+            display: inline-flex;
+            .tbtn{
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                font-size: 18px;
+                padding-left: 1rem;
+            
+            }
+            .tlabel{
+                margin: 0;
+                padding-left: 1rem;
+                padding-top: 3px;
+            }
+        }
+    }
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #ffffff;
+        /* opacity: 1; */
+    }
+    textarea::-webkit-input-placeholder {
+        color: rgb(116, 46, 46);
+        z-index: 1;
+        }
+    }
+    

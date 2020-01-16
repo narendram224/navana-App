@@ -1,0 +1,209 @@
+<section class="viewer">
+    <nav class="nav navbar bg-dark">
+        <a class="navbar-brand  navtext">navan Web App</a>
+    </nav>
+    <div class="main">
+        <form class="addRecord"  (ngSubmit)="onSubmit()">
+            <form ></form>
+            <h5 class="headRecd">Add New Record &#9651;</h5>
+            <div class="form-group">
+                <label>ENTER RECORD ID</label>
+                <input type="text" [(ngModel)]="Product.recordId"  class="form-control w-25 form-control-sm h-25" name="id">
+            </div>
+            <div class="recdCont">
+                <div class="recdlabel">
+                    <h5>Record Content</h5>
+                    <div class="form-check form-check-inline pl-3">
+                        <label class="form-check-label text-muted">
+                            <input class="form-check-input" type="checkbox"  [(checked)]="speak" (change)="doSpeak($event)" name="speaks" id="">Make
+                            it Speakable
+                        </label>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                         <div class="col-md-3 ContentMain" >
+                            <div class="form-group">
+                                <label for="" class="p-0 m-0 text-muted"><small>English</small></label>
+                                <p class="float-right p-0 m-0">+</p>
+                                <textarea class="form-control" [(ngModel)]="Product.englishNormal" name="normal" id="" rows="3" cols="4"></textarea>
+                            </div>
+                        </div> 
+                         <div class="col-md-3 ContentMain" >
+                            <div class="form-group">
+                                <label for="" class="p-0 m-0 text-muted"><small>Hindi</small></label>
+                                <p class="float-right p-0 m-0">+</p>
+                                <textarea class="form-control" [(ngModel)]="Product.hindiNormal" name="normal" id="" rows="3" cols="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3 ContentMain" >
+                            <div class="form-group">
+                                <label for="" class="p-0 m-0 text-muted"><small>kananda</small></label>
+                                <p class="float-right p-0 m-0">+</p>
+                                <textarea class="form-control" [(ngModel)]="Product.kannadaNormal" name="normal" id="" rows="3" cols="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3 ContentMain" >
+                            <div class="form-group">
+                                <label for="" class="p-0 m-0 text-muted"><small>Oriya</small></label>
+                                <p class="float-right p-0 m-0">+</p>
+                                <textarea class="form-control" [(ngModel)]="Product.oriyaNormal" name="normal" id="" rows="3" cols="4"></textarea>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row" *ngIf="speak===true">
+                        <div class="col-md-3 col-sm-6 ContentMain">
+                            <div class="form-group" >
+                                <label for="" class="p-0 m-0 text-muted"><small>Speakable content in
+                                        English</small></label>
+                                <label class=" float-right p-0 m-0">
+                                    <i class="fa fa-image"></i>+<input type="file" class="inputval" 
+                                        style="display: none;" id="b1" name="speakable" #f1
+                                        (change)="optionalExtraProcessing(f1)">
+                                </label>
+                                <div class="area">
+                                    <textarea class="form-control " value="ssfsfsfsfs" name="" id="" rows="3" cols="4">
+                                        </textarea>
+                                    <div class="audio">
+                                        <audio #pl1 class="d-none" controls
+                                            src="f1.value">
+                                        </audio>
+                                        <div class="interaldiv">
+                                            <button class="mybtn" type="button"
+                                                (click)="togglePlay('player1',pl1)">{{show?.player1===true ?'&#9656;':'||'}}</button>
+                                            <small *ngIf="f1" class="mysmall">{{f1.files[0]?.name}}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6  ContentMain">
+                            <div class="form-group" >
+                                <label for="" class="p-0 m-0 text-muted"><small>Speakable content in
+                                        Hindi</small></label>
+                                <label class=" float-right p-0 m-0">
+                                    <i class="fa fa-image"></i>+<input type="file" class="inputval" 
+                                        style="display: none;" id="b1" name="speakable" #f2>
+                                </label>
+                                <div class="area">
+                                    <textarea readonly class="form-control " name="" id="" rows="3" cols="4">
+                                        </textarea>
+                                    <div class="audio">
+                                        <audio #pl2 class="d-none" controls
+                                            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3  ">
+                                        </audio>
+                                        <div class="interaldiv">
+                                            <button class="mybtn" type="button"
+                                                (click)="togglePlay('player2',pl2)">{{show.player2===true ?'&#9656;':'||'}}</button>
+                                            <small *ngIf="f2" class="mysmall">{{f2.files[0]?.name}}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 ContentMain">
+                            <div class="form-group" >
+                                <label for="" class="p-0 m-0 text-muted"><small>Speakable content in
+                                        kananda</small></label>
+                                <label class=" float-right p-0 m-0">
+                                    <i class="fa fa-image"></i>+<input type="file" class="inputval"  
+                                        style="display: none;" id="b1" name="speakable" #f3 >
+                                </label>
+                                <div class="area">
+                                    <textarea readonly class="form-control " name="" id="" rows="3" cols="4">
+                                        </textarea>
+                                    <div class="audio">
+                                        <audio #pl3 class="d-none" controls
+                                            src="f3.value  ">
+                                        </audio>
+                                        <div class="interaldiv">
+                                            <button class="mybtn" type="button"
+                                                (click)="togglePlay('player3',pl3)">{{show.player3===true?'&#9656;':'||'}}</button>
+                                            <small *ngIf="f3" class="mysmall">{{f3.files[0]?.name}}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 ContentMain">
+                            <div class="form-group">
+                                <label for="" class="p-0 m-0 text-muted"><small>Speakable content in
+                                        Oriya</small></label>
+                                <!-- <input class="float-right p-0 m-0" type="file" value="+"> 
+                                 src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3  "
+                                -->
+                                <label class=" float-right p-0 m-0">
+                                    <i class="fa fa-image"></i>+<input required type="file" class="inputval" (change)="fileChange($event)"
+                                        style="display: none;" id="b1" name="speakable" #f4 >
+                                </label>
+                                <div class="area">
+                                    <textarea readonly class="form-control" name="" id="" rows="3" cols="4">
+                                        </textarea>
+                                    <div class="audio">
+                                        <audio #pl4 class="d-none" controls
+                                            src="f4.value">
+                                        </audio>
+                                        <div class="interaldiv">
+                                            <button class="mybtn" type="button"
+                                                (click)="togglePlay('player4',pl4)">{{show.player4===true?'&#9656;':'||'}}</button>
+                                            <small *ngIf="f4" class="mysmall">{{f4.files[0]?.name}}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Add New Record</button>
+                    <hr>
+                </div>
+
+
+            </div>
+            </form>
+        </div>
+        <div class="allRecord">
+            <h3 class="text-info ml-3">All Records</h3>
+            <table class="table table-secondary">
+                <thead class="thead-secondary">
+                    <tr>
+                        <th></th>
+                        <th>Record Id</th>
+                        <th>Content in English</th>
+                        <th>Content in Hindi</th>
+                        <th>Content in Kannada</th>
+                        <th>Content in Oriya</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                       
+                        <tr *ngFor="let record of allRecords;let i=index">
+                            <td >{{i+1}}</td>
+                            <td>{{record.recordId}}</td>
+                            <td>{{record.englishNormal}}</td>
+                            <td>{{record.hindiNormal}}</td>
+                            <td>{{record.kannadaNormal}}</td>
+                            
+                            <td *ngIf="record.oriyaSpeakable" >
+                                <div class="tAudio">
+                                    <audio #def class="d-none" controls
+                                        [src]="record.oriyaSpeakable">
+                                    </audio>
+                                    <div class="tdiv">
+                                        <button class="tbtn"
+                                            (click)="togglePlay('player4',def)">{{show.player4===true?'&#9656;':'||'}}</button>
+                                        <small >kyo ab kya hua</small>
+                                        <p class="tlabel">core.mp3 </p>
+                                    </div>
+                                </div>
+                            
+                            </td>
+                            <td *ngIf="!record.oriyaSpeakable">{{record.oriyaNormal}}</td>
+                        </tr>   
+                    </tbody>
+            </table>
+        </div>
+    
+</section>

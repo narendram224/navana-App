@@ -1,0 +1,28 @@
+<section class="browser">
+    <nav class="nav navbar bg-dark">
+        <a class="navbar-brand  navtext">navan Web App</a>
+    </nav>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 head mt-3 mb-2 mr-3">
+                <h5 class="heading">Projects screen</h5>
+                <div class="form-group in">
+               
+                  <input type="text"
+                    class="form-control" [(ngModel)]="newScreen" name="" id="" aria-describedby="helpId" placeholder="enter screen ">
+                  
+                </div>
+                <button class="addBtn pl-5 pr-5" (click)="addNewScreen()">add new screen</button>
+                <div class="buttonLine"></div>
+            </div>
+            <div class="mainContent">
+                <div class="content" *ngFor="let item of newArr" (click)="gotoView(item._id)">
+                    <p class="recordtxt">{{item.name}} </p>
+                        <p class="recordtxt float-right">{{item.count=='undefine'?'0 Records':item.count}}</p>
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+</section>
