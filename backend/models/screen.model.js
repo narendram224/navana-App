@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const ScreenSchema  = mongoose.Schema({
-    name: {type:String},
+const Schema = mongoose.Schema;
+const ScreenSchema  = new Schema({
+    name:String,
+   
 });
 
 module.exports = mongoose.model('screen',ScreenSchema);

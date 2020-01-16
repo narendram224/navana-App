@@ -1,15 +1,18 @@
 const mongoose = require('mongoose');
-const RecordSchema  = mongoose.Schema({
-    screenId : {type:mongoose.Schema.Types.ObjectId,ref:'screen'},
-    recordId: {type:String},
-   englishNormal:{type:String},
-   englishSpeakable:{type:String}
-//    hindiNormal:{type:String},
-//    hindiSpeakable:{type:String},
-//    kannadaNormal:{type:String},
-//    kannadaSpeakable:{type:String},
-//    oriyaNormal:{type:String},
-//    oriyaSpeakable:{type:String},
+const Schema = mongoose.Schema;
+const RecordSchema  = new Schema({
+    screenId:{type:Schema.Types.ObjectId,ref:'screen'},
+    recordId:String,
+    englishNormal:String,
+    englishSpeakable:String,
+    hindiNormal:String,
+   hindiSpeakable:String,
+   hindiNormal:String,
+   hindiSpeakable:String,
+   kannadaNormal:String,
+   kannadaSpeakable:String,
+   oriyaNormal:String,
+   oriyaSpeakable:String
 });
 
-module.exports = mongoose.model('records',RecordSchema);
+module.exports = mongoose.model('record',RecordSchema);
